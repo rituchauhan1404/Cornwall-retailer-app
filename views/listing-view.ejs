@@ -1,0 +1,51 @@
+<%- include("./partials/header", {title:" Listing"}) %>
+    
+ <div class="head">
+    <a href="/"> <img src="/images/cornwall-realtor-logo.jpg" alt="logo" width="60px" /></a>
+    <a href="/downtown"> Downtown</a>
+    <a href="/northend"> Northend</a>
+    <a href="/eastend"> Eastend</a>
+    <a href="/riverdale"> Riverdale</a><br>
+ </div>
+   
+
+    <img src="<%=listing.image%>" alt="" width="30%"/>
+
+    <h1><%= listing.address %> </h1>
+
+    <h4>Price: <%= listing.price%></h4>
+    <h2>Details</h2>
+    <ul>
+        <li>Postal Code: <%=listing.postalCode%></li>
+        <li>MLS: <%=listing.MLSnumber%></li>
+        <li>Description: <%=listing.description%></li>
+    </ul>
+
+    <h2>Property Summary</h2>
+    <ul>
+        <li><strong>Property Type:</strong> <%= listing.propertySummary.propertyType %></li>
+        <li><strong>Building Type:</strong> <%= listing.propertySummary.buildingType %></li>
+        <li><strong>Storeys:</strong> <%= listing.propertySummary.storeys %></li>
+        <li><strong>Title:</strong> <%= listing.propertySummary.title %></li>
+        <li><strong>Built In:</strong> <%= listing.propertySummary.builtIn %></li>
+        <li><strong>Taxes:</strong> <%= listing.propertySummary.taxes %></li>
+        <li><strong>Parking:</strong> <%= listing.propertySummary.parking %></li>
+    </ul>
+
+    <h2>Building Summary</h2>
+    <ul>
+        <li><strong>Bedrooms:</strong> <%= listing.buildingSummary.bedrooms %></li>
+        <li><strong>Bathrooms:</strong> <%= listing.buildingSummary.bathrooms %></li>
+        <li><strong>Building Features:</strong> <%= listing.buildingSummary.buildingFeatures.join(', ') %></li>
+        <li><strong>Cooling:</strong> <%= listing.buildingSummary.cooling %></li>
+        <li><strong>Heating:</strong> <%= listing.buildingSummary.heating %></li>
+        <li><strong>Sewer:</strong> <%= listing.buildingSummary.sewer %></li>
+        <li><strong>Water:</strong> <%= listing.buildingSummary.water %></li>
+        <li><strong>Size:</strong> <%= listing.buildingSummary.size %></li>
+    </ul>
+
+    <a href="/<%= neighbourhood %>">Back</a>
+    <a href="/">Home</a>
+
+
+    <%- include("./partials/footer") %>

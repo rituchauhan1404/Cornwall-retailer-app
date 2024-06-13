@@ -1,0 +1,29 @@
+
+<%- include("./partials/header", {title:"Eastend"}) %>
+    
+
+<div class="head"><a href="/"> <img src="./images/cornwall-realtor-logo.jpg" alt="" width="60px" /></a>
+   <a href="/downtown"> Downtown</a>
+   <a href="/northend"> Northend</a>
+   <a href="/riverdale"> Riverdale</a><br> </div>
+    
+
+    <h1> Welcome to Eastend</h1> 
+
+    <form action="/eastend" method="GET" >
+        <button name="sort" value="ascendingly">Sort Price ascendingly</button>
+        <button name="sort" value="decendingly">Sort Price decendingly</button>
+    </form> <hr>
+    <br>
+    
+    <% for (let i = 0; i < eastend.length; i++) { %>
+       <div class="section1"> <img src="<%= eastend[i].image %>" alt="" width="200px"></div> <br>
+         <p><strong><%= eastend[i].address  %></strong></p>
+         <p>Price: <%= eastend[i].price %></p>
+         <form action="/eastend/<%=eastend[i].id%>" method="get">
+            <button type="submit">Visit Listing</button>
+         </form> <hr>
+      <% } %>
+    
+
+      <%- include("./partials/footer") %>
